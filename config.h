@@ -22,7 +22,7 @@ static const char *fonts[] = {
 	/*"termsynu:size=12",*/
 
 	"ProFontWindows Nerd Font Mono:size=10",
-  	"xbmicons:size=9"
+  	"Wucon Siji:size=10"
 	
 /*  	"ProFontWindows Nerd Font Mono:size=9",  */
 };
@@ -103,7 +103,7 @@ static const int resizehints 	= 0;	/* 1 means respect size hints in tiled resiza
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "Tile",      tile },    /* first entry is default */
+	{ "|=",      tile },    /* first entry is default */
 	{ "Null",      NULL },    /* no layout function means floating behavior */
 	{ "Monocle",      monocle },
 	{ "htile",      htile },

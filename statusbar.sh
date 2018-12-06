@@ -31,13 +31,13 @@ glyph_vol="墳"
 glyph_tim=""
 glyph_clock=""
 glyph_tor="<"
-sep_solid="<"
-sep_line=""
+sep_solid=""
+sep_line=""
 
 print_song_info() {
   song_info="$(mpc  | head -n 1 | cut -c 1-200)"
   #song_info="$(mpc '{{{{%a \uE01B }%t}}|{%f}}' | head -n 1 | cut -c 1-200)"
-  if [[ ! $song_info ]]; then
+  if [[ $song_info == "volume:100%   repeat: off   random: off   single: off   consume: off" ]]; then
 song_info="Off"
   fi
 echo -ne "${sep_solid} ${glyph_msc} ${song_info} "
@@ -51,14 +51,14 @@ torrent_status="Idle"
 echo -ne "${sep_solid}${glyph_tor} ${torrent_status} "
 }
 
-#print_email_unread() {
-#  echo -ne "${colour_dgry}${sep_solid}${colour_ylw} ${glyph_eml}"
-#  for maildir in $(find $HOME/.mutt/maildir/*/inbox/new -type d); do
-#unread_count="$(ls "${maildir}" | wc -l)"
-#    echo -n " ${unread_count}"
-#  done
-#echo -n " "
-#}
+print_email_unread() {
+  echo -ne "${glyph_eml}"
+  for maildir in $(find $HOME/.mutt/maildir/*/inbox/new -type d); do
+unread_count="$(ls "${maildir}" | wc -l)"
+    echo -n " ${unread_count}"
+  done
+echo -n " "
+}
 
 
 print_battery() {
@@ -77,14 +77,15 @@ print_volume() {
 }
 
 print_datetime() {
-  datetime="$(date "+%a %d %b - %d %H:%M")"
+  #datetime="$(date "+%a %d %b - %d %H:%M")"
+  datetime="$(date "+%a %d %b - %H:%M")"
   echo -ne "${sep_solid} ${glyph_tim} ${datetime} ${glyph_clock}"
 }
 
 # network (from: http://dzen.geekmode.org/dwiki/doku.php?id=dzen:network-meter)
 # cpu (from: https://bbs.archlinux.org/viewtopic.php?pid=661641#p661641)
-rx_old=$(cat /sys/class/net/wlo1/statistics/rx_bytes)
-tx_old=$(cat /sys/class/net/wlo1/statistics/tx_bytes)
+rx_old=$(cat /sys/class/net/wlp10s0/statistics/rx_bytes)
+tx_old=$(cat /sys/class/net/wlp10s0/statistics/tx_bytes)
 
 while true; do
   # get new cpu idle and total usage
@@ -119,7 +120,7 @@ while true; do
   # Pipe to status bar, not indented due to printing extra spaces/tabs
   xsetroot -name "$(print_song_info)\
 $(print_torrent_status)\
-#$(print_email_unread)\
+$(print_email_unread)\
 $(print_cpu_used)$(print_mem_used)\
 $(print_rx_rate)$(print_tx_rate)\
 $(print_battery)\

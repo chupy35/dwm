@@ -45,15 +45,15 @@ static const int topbar 					= 1;	/* 0 means bottom bar */
 #define NUMCOLORS 9
 static const char colors[NUMCOLORS][MAXCOLORS][9] = {
 	// border	 foreground	background
-	{ "#f9f9f9", "#c49b7c", "#1a2f20" }, // 0 = normal
-	{ "#000000", "#c49b7c", "#843a6d" }, // 1 = selected
-	{ "#b43030", "#c49b7c", "#b23450" }, // 2 = red / urgent
-	{ "#212121", "#c49b7c", "#14161A" }, // 3 = green / occupied
+	{ "#f9f9f9", "#ffb4e5", "#ad6b81" }, // 0 = normal
+	{ "#000000", "#ffb4e5", "#b06391" }, // 1 = selected
+	{ "#b43030", "#694a5e", "#b23450" }, // 2 = red / urgent
+	{ "#212121", "#ffb4e5", "#704257" }, // 3 = green / occupied
 	{ "#212121", "#ab7438", "#0b0606" }, // 4 = yellow
 	{ "#212121", "#475971", "#0b0606" }, // 5 = blue
 	{ "#212121", "#694255", "#0b0606" }, // 6 = cyan
 	{ "#212121", "#3e6868", "#0b0606" }, // 7 = magenta
-	{ "#212121", "#f5f5f5", "#843a6d" }, // 8 = rojo sangre
+	{ "#212121", "#f5f5f5", "#b06391" }, // 8 = rojo sangre
 };
 
 /* tagging */
@@ -66,9 +66,9 @@ static const char *tags[] = {
 		"misc" 
 */
 		"    ",
-		"    ",
+		"  爵 ",
 		"    ",
-		"    ",
+		"    ",
 		"    ",
 		"    ",
 /*
@@ -106,7 +106,7 @@ static const Layout layouts[] = {
 	{ "|=",      tile },    /* first entry is default */
 	{ "Null",      NULL },    /* no layout function means floating behavior */
 	{ "Monocle",      monocle },
-	{ "htile",      htile },
+	{ "H",      htile },
 	{ "gap",      gaplessgrid },
 };
 
@@ -123,7 +123,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] 			= "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "rofi", "-show", "run", "-bw", "0", "-sidebar-mode", "-terminal sakura", NULL };
+static const char *dmenucmd[] = { "rofi", "-show", "run", "-bw", "0", "-sidebar-mode", "-terminal urxvt", NULL };
 static const char *termcmd[] 		= { "urxvt", NULL };
 static const char *screenshot[] 	= { "screenshot", NULL};
 static const char *volupcmd[]      = { "amixer", "-c", "1", "-q", "set", "Master", "5%+", NULL };

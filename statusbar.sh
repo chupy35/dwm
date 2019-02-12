@@ -6,7 +6,7 @@
 # https://bitbucket.org/jasonwryan/eeepc/src/73dadb289dead8ef17ef29a9315ba8f1706927cb/Scripts/dwm-status
 
 # Colour codes from dwm/config.h
-#colour_gry="\x01" # grey on black
+colour_gry="\x01" # grey on black
 #colour_wht="\x02" # white on black
 #colour_dgry="\x04" # darkgrey on black
 #colour_blk="\x05" # black on darkgrey

@@ -45,15 +45,15 @@ static const int topbar 					= 1;	/* 0 means bottom bar */
 #define NUMCOLORS 9
 static const char colors[NUMCOLORS][MAXCOLORS][9] = {
 	// border	 foreground	background
-	{ "#f9f9f9", "#ffb4e5", "#ad6b81" }, // 0 = normal
-	{ "#000000", "#ffb4e5", "#b06391" }, // 1 = selected
+	{ "#f9f9f9", "#feeecc", "#810a2c" }, // 0 = normal
+	{ "#000000", "#feeecc", "#60003f" }, // 1 = selected
 	{ "#b43030", "#694a5e", "#b23450" }, // 2 = red / urgent
-	{ "#212121", "#ffb4e5", "#704257" }, // 3 = green / occupied
+	{ "#212121", "#feeecc", "#c02f25" }, // 3 = green / occupied
 	{ "#212121", "#ab7438", "#0b0606" }, // 4 = yellow
 	{ "#212121", "#475971", "#0b0606" }, // 5 = blue
 	{ "#212121", "#694255", "#0b0606" }, // 6 = cyan
 	{ "#212121", "#3e6868", "#0b0606" }, // 7 = magenta
-	{ "#212121", "#f5f5f5", "#b06391" }, // 8 = rojo sangre
+	{ "#212121", "#f5f5f5", "#60003f" }, // 8 = rojo sangre
 };
 
 /* tagging */

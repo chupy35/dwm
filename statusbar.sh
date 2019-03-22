@@ -114,7 +114,7 @@ while true; do
     printf "%-15b" "${sep_solid} ${glyph_dl} ${rx_rate}K"
   }
   print_tx_rate() {
-    printf "%-14b" "${sep_line} ${glyph_ul} ${tx_rate}K"
+    printf "%-14b" "${glyph_ul} ${tx_rate}K"
   }
 
   # Pipe to status bar, not indented due to printing extra spaces/tabs

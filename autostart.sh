@@ -13,3 +13,4 @@ sleep 2s && /usr/bin/resolucion
 touchegg & 
  /home/chupy35/colors/colors/colors -en  16 '/home/chupy35/imagenes/wallpapers/japawave.png' | /home/chupy35/colors/colors/toxrdb | xrdb -merge & 
  lxsession &
+ viper start &
